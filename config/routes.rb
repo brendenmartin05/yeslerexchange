@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
   devise_for :models
-  resources :listings
+  resources :listings do
+    resources :orders
+  end
 
   get 'pages/about'
 
